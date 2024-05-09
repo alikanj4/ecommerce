@@ -1,0 +1,104 @@
+import 'package:ecomercekhaled/controller/auth/login_controller.dart';
+import 'package:ecomercekhaled/core/constant/imageasset.dart';
+import 'package:ecomercekhaled/core/constant/route.dart';
+import 'package:ecomercekhaled/core/functions/alertexitapp.dart';
+import 'package:ecomercekhaled/core/functions/valid.dart';
+import 'package:ecomercekhaled/view/secreen/widget/auth/login/coustomtextformfiled.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class Login extends StatelessWidget {
+  const Login({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    LogincontrollerImp controller = Get.put(LogincontrollerImp());
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Login"),
+        backgroundColor: Colors.blue,
+      ),
+      body: PopScope(
+          canPop: false,
+          onPopInvoked: (didPop) {
+            alertexitapp();
+          },
+          child: ListView(
+            children: [
+              const SizedBox(
+                height: 90,
+              ),
+              Form(
+                key: controller.formstate,
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    children: [
+                      Image.asset(ImageAsset.login),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                      Customformfiled(
+                          title: "email",
+                          label: "email",
+                          icondata: Icons.email_outlined,
+                          controller: controller.email,
+                          valid: (val) {
+                            return ValidInOut(val!, 4, 20, "email");
+                          },
+                          isNamebr: false),
+                      Customformfiled(
+                          title: "password",
+                          label: "password",
+                          icondata: Icons.password,
+                          controller: controller.password,
+                          valid: (val) {
+                            return ValidInOut(val!, 4, 20, "password");
+                          },
+                          isNamebr: false),
+                      const SizedBox(height: 30),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        child: MaterialButton(
+                          onPressed: () {},
+                          child: const Text("forgetpasswod ?"),
+                        ),
+                      ),
+                      MaterialButton(
+                        textColor: Colors.white,
+                        color: Colors.blue,
+                        onPressed: () {
+                          Get.toNamed(AppRoute.homepage);
+                        },
+                        child: const Text("Login"),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text("Do You Account ? "),
+                          InkWell(
+                            onTap: () {
+                              controller.gotosigup();
+                            },
+                            child: const Text(
+                              "signup",
+                              style: TextStyle(
+                                color: Color(0xff225B90),
+                                fontSize: 20,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          )),
+    );
+  }
+}
