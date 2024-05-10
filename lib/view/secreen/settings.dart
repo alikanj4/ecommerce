@@ -21,9 +21,8 @@ class _Statesettings extends State<Settings> {
         key: controller.formstate,
         body: ListView(children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(00),
-            child: Image.asset(ImageAsset.kol),
-          ),
+              borderRadius: BorderRadius.circular(00),
+              child: Image.asset(ImageAsset.kol)),
           Container(
               padding: const EdgeInsets.all(5),
               margin: const EdgeInsets.all(12),
@@ -34,7 +33,7 @@ class _Statesettings extends State<Settings> {
                     onTap: () {
                       controller.gotoprofile();
                     },
-                    title: const Text("Profile "),
+                    title: Text("profile"),
                     trailing: const Icon(Icons.person_2_outlined)),
                 const Divider(height: 2, color: Colors.grey),
 

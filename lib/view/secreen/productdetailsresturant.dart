@@ -44,7 +44,10 @@ class ProductDetails extends StatelessWidget {
                     style:
                         TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 20),
-                const CustomContainerdet(price: '200 \$')
+                CustomContainerdet(
+                  price: '200 \$',
+                  addtocart: () {},
+                )
               ])),
         ]));
   }

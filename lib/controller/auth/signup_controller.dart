@@ -18,32 +18,13 @@ class SignUpControllerImp extends SignUpController {
   GlobalKey<FormState> formstate = GlobalKey();
   StatusRequest? statusRequest;
 
-  // signup() async {
-  //   if (formstate.currentState!.validate()) {
-  //     statusRequest = StatusRequest.laoding;
-  //     var response = await signUpData.postadata(
-  //       username.text,
-  //       email.text,
-  //       password.text,
-  //       phone.text,
-  //     );
-  //     // ignore: avoid_print
-  //     print("=============================== controller $response");
-  //     statusRequest = handlingData(response);
-  //     if (StatusRequest.success == statusRequest) {
-  //       if (response['status'] == "success") {
-  //         // data.addAll(response['data']);
-  //         Get.offNamed(AppRoute.login);
-  //       } else {
-  //         Get.defaultDialog(
-  //             title: "wering", middleText: "الايميل او البريد موجود");
-  //         statusRequest == StatusRequest.failure;
-  //       }
-
-  //       update();
-  //     }
-  //   } else {}
-  // }
+  signup() async {
+    if (formstate.currentState!.validate()) {
+      print("valid");
+    } else {
+      print(" not valid");
+    }
+  }
 
   @override
   tologincontroller() {

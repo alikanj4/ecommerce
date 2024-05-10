@@ -1,4 +1,5 @@
 import 'package:ecomercekhaled/binding.dart';
+import 'package:ecomercekhaled/core/localization/changetranslations.dart';
 import 'package:ecomercekhaled/core/services/servises.dart';
 import 'package:ecomercekhaled/routes.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +16,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Localecontroller controller = Get.put(Localecontroller());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: routes,
+      locale: controller.language,
       initialBinding: MyBinding(),
       // theme: ThemeData.dark(),
     );

@@ -24,69 +24,62 @@ class SignUp extends StatelessWidget {
           },
           child: ListView(
             children: [
-              const SizedBox(
-                height: 90,
-              ),
+              const SizedBox(height: 90),
               Form(
-                key: controller.formstate,
-                child: Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      Image.asset(ImageAsset.login),
-                      const SizedBox(
-                        height: 60,
-                      ),
-                      Customformfiled(
-                          title: "username",
-                          label: "username",
-                          icondata: Icons.email_outlined,
-                          controller: controller.username,
-                          valid: (val) {
-                            return ValidInOut(val!, 4, 20, "username");
-                          },
-                          isNamebr: false),
-                      Customformfiled(
-                          title: "email",
-                          label: "email",
-                          icondata: Icons.email_outlined,
-                          controller: controller.email,
-                          valid: (val) {
-                            return ValidInOut(val!, 4, 20, "email");
-                          },
-                          isNamebr: false),
-                      Customformfiled(
-                          title: "phone",
-                          label: "phone",
-                          icondata: Icons.phone,
-                          controller: controller.phone,
-                          valid: (val) {
-                            return ValidInOut(val!, 4, 20, "phone");
-                          },
-                          isNamebr: false),
-                      Customformfiled(
-                          title: "password",
-                          label: "password",
-                          icondata: Icons.password,
-                          controller: controller.password,
-                          valid: (val) {
-                            return ValidInOut(val!, 4, 20, "password");
-                          },
-                          isNamebr: false),
-                      const SizedBox(height: 30),
-                      MaterialButton(
-                        textColor: Colors.white,
-                        color: Colors.blue,
-                        onPressed: () {},
-                        child: const Text("SignIn"),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                  key: controller.formstate,
+                  child: Container(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(children: [
+                        Image.asset(ImageAsset.login),
+                        const SizedBox(
+                          height: 60,
+                        ),
+                        Customformfiled(
+                            title: "username",
+                            label: "username",
+                            icondata: Icons.email_outlined,
+                            controller: controller.username,
+                            valid: (val) {
+                              return ValidInOut(val!, 4, 20, "username");
+                            },
+                            isNamebr: false),
+                        Customformfiled(
+                            title: "email",
+                            label: "email",
+                            icondata: Icons.email_outlined,
+                            controller: controller.email,
+                            valid: (val) {
+                              return ValidInOut(val!, 4, 20, "email");
+                            },
+                            isNamebr: false),
+                        Customformfiled(
+                            title: "phone",
+                            label: "phone",
+                            icondata: Icons.phone,
+                            controller: controller.phone,
+                            valid: (val) {
+                              return ValidInOut(val!, 4, 20, "phone");
+                            },
+                            isNamebr: false),
+                        Customformfiled(
+                            title: "password",
+                            label: "password",
+                            icondata: Icons.password,
+                            controller: controller.password,
+                            valid: (val) {
+                              return ValidInOut(val!, 4, 20, "password");
+                            },
+                            isNamebr: false),
+                        const SizedBox(height: 30),
+                        MaterialButton(
+                            textColor: Colors.white,
+                            color: Colors.blue,
+                            onPressed: () {
+                              controller.signup();
+                            },
+                            child: const Text("SignIn")),
+                        const SizedBox(height: 30)
+                      ])))
             ],
           )),
     );

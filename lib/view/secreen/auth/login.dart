@@ -25,9 +25,7 @@ class Login extends StatelessWidget {
           },
           child: ListView(
             children: [
-              const SizedBox(
-                height: 90,
-              ),
+              const SizedBox(height: 90),
               Form(
                 key: controller.formstate,
                 child: Container(
@@ -65,13 +63,17 @@ class Login extends StatelessWidget {
                         ),
                       ),
                       MaterialButton(
-                        textColor: Colors.white,
-                        color: Colors.blue,
-                        onPressed: () {
-                          Get.toNamed(AppRoute.homepage);
-                        },
-                        child: const Text("Login"),
-                      ),
+                          textColor: Colors.white,
+                          color: Colors.blue,
+                          onPressed: () {
+                            Get.toNamed(AppRoute.homepage);
+                          },
+                          child: MaterialButton(
+                            onPressed: () {
+                              controller.login();
+                            },
+                            child: const Text("Login"),
+                          )),
                       const SizedBox(
                         height: 30,
                       ),

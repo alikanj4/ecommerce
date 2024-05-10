@@ -51,7 +51,7 @@ class ProductDetailsEcommers extends StatelessWidget {
 
               //==========================================================
 
-              const CustomContainerdet(price: '200 \$')
+              CustomContainerdet(price: '200 \$', addtocart: () {})
 
               //==========================================================
             ]),

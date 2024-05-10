@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class Logincontroller extends GetxController {
-  // login();
-  tologincontroller();
-  forgetpasswordcode();
+  login();
+
   gotosigup();
 }
 
@@ -19,48 +18,15 @@ class LogincontrollerImp extends Logincontroller {
   GlobalKey<FormState> formstate = GlobalKey();
   StatusRequest? statusRequest;
 
-  // @override
-  // login() async {
-  //   if (formstate.currentState!.validate()) {
-  //     statusRequest = StatusRequest.laoding;
-  //     update();
-  //     var response = await loginData.postadata(
-  //       email.text,
-  //       password.text,
-  //     );
-  //     print("=============================== controller $response");
-  //     statusRequest = handlingData(response);
-  //     if (StatusRequest.success == statusRequest) {
-  //       if (response['status'] == "success") {
-  //         // data.addAll(response['data']);
-  //         myServices.sharedPreferences
-  //             .setString("id", response['data']['users_id'].toString());
-  //         myServices.sharedPreferences
-  //             .setString("username", response['data']["users_name"].toString());
-  //         myServices.sharedPreferences
-  //             .setString("email", response['data']["users_email"].toString());
-  //         myServices.sharedPreferences
-  //             .setString("phone", response['data']["users_phone"].toString())
-  //             .toString();
-
-  //         myServices.sharedPreferences.setString("step", "2");
-  //         Get.offNamed(AppRoute.homepage);
-  //       } else {
-  //         Get.defaultDialog(
-  //             title: "wering", middleText: "الايميل او البريد خطأ");
-  //         statusRequest == StatusRequest.failure;
-  //       }
-
-  //       update();
-  //     }
-  //   }
-  // }
-
   @override
-  tologincontroller() {}
-
-  @override
-  forgetpasswordcode() {}
+  login() async {
+    if (formstate.currentState!.validate()) {
+      Get.toNamed(AppRoute.homepage);
+      print("valid");
+    } else {
+      print("not valid");
+    }
+  }
 
   @override
   void onInit() {
