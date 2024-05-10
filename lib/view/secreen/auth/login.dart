@@ -14,28 +14,27 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     LogincontrollerImp controller = Get.put(LogincontrollerImp());
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Login"),
-        backgroundColor: Colors.blue,
-      ),
+      appBar: AppBar(title: const Text("Login"), centerTitle: true),
+
+      //====================================================
+
       body: PopScope(
           canPop: false,
           onPopInvoked: (didPop) {
             alertexitapp();
           },
-          child: ListView(
-            children: [
-              const SizedBox(height: 90),
-              Form(
+          child: ListView(children: [
+            const SizedBox(height: 90),
+            Form(
                 key: controller.formstate,
                 child: Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
+                    padding: const EdgeInsets.all(20),
+                    child: Column(children: [
                       Image.asset(ImageAsset.login),
-                      const SizedBox(
-                        height: 60,
-                      ),
+                      const SizedBox(height: 60),
+
+                      //====================================================
+
                       Customformfiled(
                           title: "email",
                           label: "email",
@@ -45,6 +44,9 @@ class Login extends StatelessWidget {
                             return ValidInOut(val!, 4, 20, "email");
                           },
                           isNamebr: false),
+
+                      //====================================================
+
                       Customformfiled(
                           title: "password",
                           label: "password",
@@ -55,16 +57,19 @@ class Login extends StatelessWidget {
                           },
                           isNamebr: false),
                       const SizedBox(height: 30),
+
+                      //====================================================
+
                       Container(
-                        alignment: Alignment.centerRight,
-                        child: MaterialButton(
-                          onPressed: () {},
-                          child: const Text("forgetpasswod ?"),
-                        ),
-                      ),
+                          alignment: Alignment.centerRight,
+                          child: MaterialButton(
+                              onPressed: () {
+                                controller.forgetpasswordcode();
+                              },
+                              child: const Text("forgetpasswod ?"))),
                       MaterialButton(
                           textColor: Colors.white,
-                          color: Colors.blue,
+                          color: Colors.pink,
                           onPressed: () {
                             Get.toNamed(AppRoute.homepage);
                           },
@@ -74,33 +79,24 @@ class Login extends StatelessWidget {
                             },
                             child: const Text("Login"),
                           )),
-                      const SizedBox(
-                        height: 30,
-                      ),
+
+                      //====================================================
+
+                      const SizedBox(height: 30),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text("Do You Account ? "),
-                          InkWell(
-                            onTap: () {
-                              controller.gotosigup();
-                            },
-                            child: const Text(
-                              "signup",
-                              style: TextStyle(
-                                color: Color(0xff225B90),
-                                fontSize: 20,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          )),
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text("Do You Account ? "),
+                            InkWell(
+                                onTap: () {
+                                  controller.gotosigup();
+                                },
+                                child: const Text("signup",
+                                    style: TextStyle(
+                                        color: Colors.pink, fontSize: 20)))
+                          ])
+                    ])))
+          ])),
     );
   }
 }

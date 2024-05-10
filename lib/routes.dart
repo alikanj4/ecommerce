@@ -1,7 +1,13 @@
 import 'package:ecomercekhaled/core/constant/route.dart';
 import 'package:ecomercekhaled/core/mymiddelwere.dart/middelwere.dart';
+import 'package:ecomercekhaled/view/secreen/auth/forgetpassword.dart';
 import 'package:ecomercekhaled/view/secreen/auth/login.dart';
+import 'package:ecomercekhaled/view/secreen/auth/resertpassord.dart';
 import 'package:ecomercekhaled/view/secreen/auth/signup.dart';
+import 'package:ecomercekhaled/view/secreen/auth/sucessresertpassword.dart';
+import 'package:ecomercekhaled/view/secreen/auth/sucesssignup.dart';
+import 'package:ecomercekhaled/view/secreen/auth/verfiycpdesignup.dart';
+import 'package:ecomercekhaled/view/secreen/auth/veritycode.dart';
 import 'package:ecomercekhaled/view/secreen/cart.dart';
 import 'package:ecomercekhaled/view/secreen/evaluation.dart';
 import 'package:ecomercekhaled/view/secreen/homescreen.dart';
@@ -23,15 +29,24 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.restusaunts, page: () => const Restusaunts()),
   GetPage(name: AppRoute.restaurantitems, page: () => const RestaurantItems()),
   GetPage(name: AppRoute.evaluation, page: () => const Evaluation()),
-  GetPage(
-      name: AppRoute.productdetailsrest, page: () => const ProductDetails()),
   GetPage(name: AppRoute.cart, page: () => const Cart()),
   GetPage(name: AppRoute.notification, page: () => const Notification()),
   GetPage(name: AppRoute.ecommerce, page: () => const Ecommerce()),
   GetPage(name: AppRoute.itemsecommerce, page: () => const ItemsEcommerce()),
   GetPage(
+      name: AppRoute.productdetailsrest, page: () => const ProductDetails()),
+  GetPage(
       name: AppRoute.productdetailsecommers,
       page: () => const ProductDetailsEcommers()),
+  GetPage(
+      name: AppRoute.sucessResertPassword,
+      page: () => const Sucessresertpassword()),
   GetPage(name: AppRoute.profile, page: () => const Profile()),
   GetPage(name: AppRoute.order, page: () => const Order()),
+  GetPage(name: AppRoute.forgetpassword, page: () => const Forgetpassword()),
+  GetPage(name: AppRoute.resertpassword, page: () => const Rsertpassword()),
+  GetPage(name: AppRoute.veriflycode, page: () => const Veriflycode()),
+  GetPage(name: AppRoute.sucessSignUp, page: () => const SucessSignUp()),
+  GetPage(
+      name: AppRoute.veriflycodeSignup, page: () => const VeriflycodeSignUp()),
 ];

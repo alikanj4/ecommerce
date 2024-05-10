@@ -14,14 +14,17 @@ class SignUp extends StatelessWidget {
     SignUpControllerImp controller = Get.put(SignUpControllerImp());
     return Scaffold(
       appBar: AppBar(
-        title: const Text("SignUp"),
-        backgroundColor: Colors.blue,
-      ),
+          title: const Text("SignUp"),
+          backgroundColor: Colors.pink,
+          centerTitle: true),
       body: PopScope(
           canPop: false,
           onPopInvoked: (didPop) {
             alertexitapp();
           },
+
+          //=================================================
+
           child: ListView(
             children: [
               const SizedBox(height: 90),
@@ -31,9 +34,7 @@ class SignUp extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       child: Column(children: [
                         Image.asset(ImageAsset.login),
-                        const SizedBox(
-                          height: 60,
-                        ),
+                        const SizedBox(height: 60),
                         Customformfiled(
                             title: "username",
                             label: "username",
@@ -43,6 +44,9 @@ class SignUp extends StatelessWidget {
                               return ValidInOut(val!, 4, 20, "username");
                             },
                             isNamebr: false),
+
+                        //=================================================
+
                         Customformfiled(
                             title: "email",
                             label: "email",
@@ -52,6 +56,9 @@ class SignUp extends StatelessWidget {
                               return ValidInOut(val!, 4, 20, "email");
                             },
                             isNamebr: false),
+
+                        //=================================================
+
                         Customformfiled(
                             title: "phone",
                             label: "phone",
@@ -61,6 +68,9 @@ class SignUp extends StatelessWidget {
                               return ValidInOut(val!, 4, 20, "phone");
                             },
                             isNamebr: false),
+
+                        //=================================================
+
                         Customformfiled(
                             title: "password",
                             label: "password",
@@ -71,9 +81,12 @@ class SignUp extends StatelessWidget {
                             },
                             isNamebr: false),
                         const SizedBox(height: 30),
+
+                        //=================================================
+
                         MaterialButton(
                             textColor: Colors.white,
-                            color: Colors.blue,
+                            color: Colors.pink,
                             onPressed: () {
                               controller.signup();
                             },

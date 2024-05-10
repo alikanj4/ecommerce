@@ -20,6 +20,7 @@ class SignUpControllerImp extends SignUpController {
 
   signup() async {
     if (formstate.currentState!.validate()) {
+      Get.toNamed(AppRoute.veriflycodeSignup);
       print("valid");
     } else {
       print(" not valid");

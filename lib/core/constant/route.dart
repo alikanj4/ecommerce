@@ -15,4 +15,10 @@ class AppRoute {
   static const String productdetailsecommers = "/productdetailsecommers";
   static const String profile = "/profile";
   static const String order = "/order";
+  static const String forgetpassword = "/forgetpassword";
+  static const String veriflycode = "/veriflycode";
+  static const String sucessResertPassword = "/sucessResertPassword";
+  static const String sucessSignUp = "/sucessSignUp";
+  static const String resertpassword = "/resertpassword";
+  static const String veriflycodeSignup = "/veriflycodeSignup";
 }
