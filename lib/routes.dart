@@ -1,5 +1,6 @@
 import 'package:ecomercekhaled/core/constant/route.dart';
 import 'package:ecomercekhaled/core/mymiddelwere.dart/middelwere.dart';
+import 'package:ecomercekhaled/view/secreen/abouttheapp.dart';
 import 'package:ecomercekhaled/view/secreen/auth/forgetpassword.dart';
 import 'package:ecomercekhaled/view/secreen/auth/login.dart';
 import 'package:ecomercekhaled/view/secreen/auth/resertpassord.dart';
@@ -13,6 +14,7 @@ import 'package:ecomercekhaled/view/secreen/evaluation.dart';
 import 'package:ecomercekhaled/view/secreen/homescreen.dart';
 import 'package:ecomercekhaled/view/secreen/ecommerce.dart';
 import 'package:ecomercekhaled/view/secreen/itemsecommerce.dart';
+import 'package:ecomercekhaled/view/secreen/location.dart';
 import 'package:ecomercekhaled/view/secreen/order.dart';
 import 'package:ecomercekhaled/view/secreen/productdetailsecommers.dart';
 import 'package:ecomercekhaled/view/secreen/profile.dart';
@@ -41,12 +43,19 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
       name: AppRoute.sucessResertPassword,
       page: () => const Sucessresertpassword()),
-  GetPage(name: AppRoute.profile, page: () => const Profile()),
   GetPage(name: AppRoute.order, page: () => const Order()),
+
+  //=================== auth =================================
   GetPage(name: AppRoute.forgetpassword, page: () => const Forgetpassword()),
   GetPage(name: AppRoute.resertpassword, page: () => const Rsertpassword()),
   GetPage(name: AppRoute.veriflycode, page: () => const Veriflycode()),
   GetPage(name: AppRoute.sucessSignUp, page: () => const SucessSignUp()),
   GetPage(
       name: AppRoute.veriflycodeSignup, page: () => const VeriflycodeSignUp()),
+
+  //=================== settings =================================
+
+  GetPage(name: AppRoute.abouttheapp, page: () => const AboutTheApp()),
+  GetPage(name: AppRoute.location, page: () => const Location()),
+  GetPage(name: AppRoute.profile, page: () => const Profile()),
 ];

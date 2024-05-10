@@ -41,21 +41,26 @@ class Login extends StatelessWidget {
                           icondata: Icons.email_outlined,
                           controller: controller.email,
                           valid: (val) {
-                            return ValidInOut(val!, 4, 20, "email");
+                            return ValidInOut(val!, 4, 50, "email");
                           },
                           isNamebr: false),
 
                       //====================================================
-
-                      Customformfiled(
-                          title: "password",
-                          label: "password",
-                          icondata: Icons.password,
-                          controller: controller.password,
-                          valid: (val) {
-                            return ValidInOut(val!, 4, 20, "password");
-                          },
-                          isNamebr: false),
+                      GetBuilder<LogincontrollerImp>(
+                        builder: (controller) => Customformfiled(
+                            title: "password",
+                            label: "password",
+                            icondata: Icons.password,
+                            obscureText: controller.isshoepass,
+                            onTapIcons: () {
+                              controller.showpassword();
+                            },
+                            controller: controller.password,
+                            valid: (val) {
+                              return ValidInOut(val!, 4, 50, "password");
+                            },
+                            isNamebr: false),
+                      ),
                       const SizedBox(height: 30),
 
                       //====================================================

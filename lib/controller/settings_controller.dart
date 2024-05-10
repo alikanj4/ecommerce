@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class SettingsController extends GetxController {
   MyServices myServices = Get.find();
 
-  GlobalKey<ScaffoldState> formstate = GlobalKey();
+  GlobalKey<ScaffoldState> formstate = GlobalKey<ScaffoldState>();
 
   logout() {
     myServices.sharedPreferences.clear();

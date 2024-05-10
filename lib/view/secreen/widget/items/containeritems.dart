@@ -32,7 +32,10 @@ class CustomCard extends StatelessWidget {
             child: Row(children: [
               //=========================================
 
-              Expanded(child: ClipRRect(child: Image.asset(image))),
+              Expanded(
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(image))),
               const SizedBox(width: 15),
               Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
                 Container(

@@ -12,6 +12,13 @@ class ImageAsset {
   static const String aova = "$asssetimage/عطر.jpg";
   static const String eat = "$asssetimage/00.jpg";
   static const String kol = "$asssetimage/kol.jpg";
+  static const String duzo = "$asssetimage/دوزو.jpg";
+  static const String whatsapp = "$asssetimage/واتس اب.png";
+  static const String insta = "$asssetimage/انستاا.jpeg";
+  static const String twiter = "$asssetimage/تويتر.png";
+  static const String gmail = "$asssetimage/البريد.png";
+  static const String contact = "$asssetimage/اتصال.png";
+  static const String website = "$asssetimage/كروم.jpeg";
 
   //=========================lottie
   static const String loding = "$lottie/Animation - 1710971632650.json";

@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 abstract class Logincontroller extends GetxController {
   login();
   forgetpasswordcode();
-
+  showpassword();
   gotosigup();
 }
 
@@ -18,6 +18,7 @@ class LogincontrollerImp extends Logincontroller {
   MyServices myServices = Get.find();
   GlobalKey<FormState> formstate = GlobalKey();
   StatusRequest? statusRequest;
+  bool isshoepass = true;
 
   @override
   login() async {
@@ -51,5 +52,11 @@ class LogincontrollerImp extends Logincontroller {
   @override
   forgetpasswordcode() {
     Get.toNamed(AppRoute.forgetpassword);
+  }
+
+  @override
+  showpassword() {
+    isshoepass = isshoepass == true ? false : true;
+    update();
   }
 }

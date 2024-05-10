@@ -1,9 +1,12 @@
 import 'package:ecomercekhaled/controller/settings_controller.dart';
 import 'package:ecomercekhaled/core/constant/imageasset.dart';
+import 'package:ecomercekhaled/core/constant/route.dart';
 import 'package:ecomercekhaled/view/secreen/widget/settings/customlangsettings.dart';
 import 'package:ecomercekhaled/view/secreen/widget/settings/customlisttilesettings.dart';
+import 'package:ecomercekhaled/view/secreen/widget/settings/customlisttilesettingsone.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -28,22 +31,21 @@ class _Statesettings extends State<Settings> {
               margin: const EdgeInsets.all(12),
               child: Column(mainAxisSize: MainAxisSize.min, children: [
                 //================================================
-
-                ListTile(
+                CustomListTileSettingsOne(
+                    text: "profile",
+                    icons: Icons.person_2_outlined,
                     onTap: () {
                       controller.gotoprofile();
-                    },
-                    title: Text("profile"),
-                    trailing: const Icon(Icons.person_2_outlined)),
-                const Divider(height: 2, color: Colors.grey),
+                    }),
 
                 //================================================
 
-                ListTile(
-                    onTap: () {},
-                    title: const Text("Adrees"),
-                    trailing: const Icon(Icons.location_on_outlined)),
-                const Divider(height: 2, color: Colors.grey),
+                CustomListTileSettingsOne(
+                    text: "Adrees",
+                    icons: Icons.location_on_outlined,
+                    onTap: () {
+                      Get.toNamed(AppRoute.location);
+                    }),
 
                 //================================================
 
@@ -80,7 +82,20 @@ class _Statesettings extends State<Settings> {
 
                 //================================================
 
-                const CustomListTileSettings()
+                CustomListTileSettings(
+                  aboutTheApp: () {
+                    Get.toNamed(AppRoute.abouttheapp);
+                  },
+                  changeTheme: () {},
+                  contectUS: () {
+                    launchUrl(Uri.parse("tel:+878754131845"));
+                  },
+                  openYourStoreNow: () {},
+                  updatenotificationkey: () {},
+                  logout: () {
+                    controller.logout();
+                  },
+                )
               ]))
         ]));
   }
