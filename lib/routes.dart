@@ -22,6 +22,7 @@ import 'package:ecomercekhaled/view/secreen/restaurants.dart';
 import 'package:ecomercekhaled/view/secreen/notification.dart';
 import 'package:ecomercekhaled/view/secreen/productdetailsresturant.dart';
 import 'package:ecomercekhaled/view/secreen/itemsrestaurants.dart';
+import 'package:ecomercekhaled/view/secreen/yourstrorsettings.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [
@@ -44,6 +45,7 @@ List<GetPage<dynamic>>? routes = [
       name: AppRoute.sucessResertPassword,
       page: () => const Sucessresertpassword()),
   GetPage(name: AppRoute.order, page: () => const Order()),
+  GetPage(name: AppRoute.yourStore, page: () => const YourStoreSettings()),
 
   //=================== auth =================================
   GetPage(name: AppRoute.forgetpassword, page: () => const Forgetpassword()),

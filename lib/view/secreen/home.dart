@@ -15,7 +15,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeControllerImp controller = Get.put(HomeControllerImp());
     return Scaffold(
-        backgroundColor: Colors.grey[200],
         body: PopScope(
             canPop: false,
             onPopInvoked: (didPop) {
@@ -23,9 +22,8 @@ class HomePage extends StatelessWidget {
             },
             child: ListView(children: [
               Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30)),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(30)),
                   margin: const EdgeInsets.all(10),
                   padding: const EdgeInsets.all(5),
                   child: Column(children: [

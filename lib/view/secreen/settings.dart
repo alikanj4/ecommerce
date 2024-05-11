@@ -1,9 +1,11 @@
 import 'package:ecomercekhaled/controller/settings_controller.dart';
 import 'package:ecomercekhaled/core/constant/imageasset.dart';
 import 'package:ecomercekhaled/core/constant/route.dart';
+import 'package:ecomercekhaled/core/localization/changetranslations.dart';
 import 'package:ecomercekhaled/view/secreen/widget/settings/customlangsettings.dart';
 import 'package:ecomercekhaled/view/secreen/widget/settings/customlisttilesettings.dart';
 import 'package:ecomercekhaled/view/secreen/widget/settings/customlisttilesettingsone.dart';
+import 'package:ecomercekhaled/view/secreen/widget/settings/customthemeSettings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -61,11 +63,16 @@ class _Statesettings extends State<Settings> {
 
                               //================================================
 
-                              child: CustomLangSettings(
-                                changetoArabic: () {},
-                                changetoEnglish: () {},
-                                changetoturka: () {},
-                              )));
+                              child: GetBuilder<Localecontroller>(
+                                  builder: (controller) => CustomLangSettings(
+                                        changetoArabic: () {
+                                          controller.changLoacle("ar");
+                                        },
+                                        changetoEnglish: () {
+                                          controller.changLoacle("en");
+                                        },
+                                        changetoturka: () {},
+                                      ))));
                     },
                     child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,15 +89,48 @@ class _Statesettings extends State<Settings> {
 
                 //================================================
 
+                MaterialButton(
+                    onPressed: () {
+                      controller.formstate.currentState!.showBottomSheet(
+                          (context) => Container(
+                              width: 2200,
+                              height: 330,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[300],
+                                  borderRadius: BorderRadius.circular(30)),
+
+                              //================================================
+
+                              child: GetBuilder<Localecontroller>(
+                                  builder: (controller) => CustomThemeSettings(
+                                        changetodark: () {
+                                          Get.changeTheme(ThemeData.dark());
+                                        },
+                                        changetoligth: () {
+                                          Get.changeTheme(ThemeData.light());
+                                        },
+                                        changetosystem: () {},
+                                      ))));
+                    },
+                    child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("change the theme"),
+                          Row(children: [
+                            Icon(Icons.mode_night_outlined),
+                          ])
+                        ])),
+
                 CustomListTileSettings(
                   aboutTheApp: () {
                     Get.toNamed(AppRoute.abouttheapp);
                   },
-                  changeTheme: () {},
                   contectUS: () {
                     launchUrl(Uri.parse("tel:+878754131845"));
                   },
-                  openYourStoreNow: () {},
+                  openYourStoreNow: () {
+                    Get.toNamed(AppRoute.yourStore);
+                  },
                   updatenotificationkey: () {},
                   logout: () {
                     controller.logout();

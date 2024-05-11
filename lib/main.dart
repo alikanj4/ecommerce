@@ -1,5 +1,6 @@
 import 'package:ecomercekhaled/binding.dart';
 import 'package:ecomercekhaled/core/localization/changetranslations.dart';
+import 'package:ecomercekhaled/core/localization/trantions.dart';
 import 'package:ecomercekhaled/core/services/servises.dart';
 import 'package:ecomercekhaled/routes.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: routes,
+      translations: MyTranstions(),
       locale: controller.language,
       initialBinding: MyBinding(),
       // theme: ThemeData.dark(),

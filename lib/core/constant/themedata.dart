@@ -7,4 +7,3 @@ ThemeData ThemeEnglish = ThemeData(
 );
 // ignore: non_constant_identifier_names
 ThemeData ThemeArabic = ThemeData(fontFamily: "cairo");
-ThemeData ThemeTurkia = ThemeData(fontFamily: "cairo");

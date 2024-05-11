@@ -20,7 +20,7 @@ class AboutTheApp extends StatelessWidget {
               margin: const EdgeInsets.all(15),
               child: Column(children: [
                 ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     child: Image.asset(ImageAsset.duzo)),
                 const SizedBox(height: 30),
                 const Center(

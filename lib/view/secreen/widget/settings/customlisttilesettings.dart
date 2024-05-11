@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class CustomListTileSettings extends StatelessWidget {
-  final Function()? changeTheme;
   final Function()? contectUS;
   final Function()? aboutTheApp;
   final Function()? updatenotificationkey;
@@ -9,7 +8,6 @@ class CustomListTileSettings extends StatelessWidget {
   final Function()? logout;
   const CustomListTileSettings(
       {super.key,
-      this.changeTheme,
       this.contectUS,
       this.aboutTheApp,
       this.updatenotificationkey,
@@ -20,10 +18,6 @@ class CustomListTileSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-      ListTile(
-          onTap: changeTheme,
-          title: const Text("change the theme"),
-          trailing: const Icon(Icons.color_lens_outlined)),
       const Divider(height: 2, color: Colors.grey),
 
       //=============================================================

@@ -12,6 +12,8 @@ abstract class Logincontroller extends GetxController {
 }
 
 class LogincontrollerImp extends Logincontroller {
+  String? lang;
+
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   // LoginData loginData = LoginData(Curd());

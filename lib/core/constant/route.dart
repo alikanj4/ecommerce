@@ -13,6 +13,7 @@ class AppRoute {
   static const String itemsecommerce = "/itemsecommerce";
   static const String productdetailsecommers = "/productdetailsecommers";
   static const String order = "/order";
+  static const String yourStore = "/yourStore";
 
   //========================auth =============================
 

@@ -71,7 +71,7 @@ class Login extends StatelessWidget {
                               onPressed: () {
                                 controller.forgetpasswordcode();
                               },
-                              child: const Text("forgetpasswod ?"))),
+                              child: Text("1".tr))),
                       MaterialButton(
                           textColor: Colors.white,
                           color: Colors.pink,
@@ -91,7 +91,7 @@ class Login extends StatelessWidget {
                       Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text("Do You Account ? "),
+                            const Text("Do Not You Account ? "),
                             InkWell(
                                 onTap: () {
                                   controller.gotosigup();
